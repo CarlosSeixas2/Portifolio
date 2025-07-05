@@ -1,0 +1,67 @@
+import seixasImg from '../../assets/seixas.png';
+
+
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            Sobre <span className="text-green-400">Mim</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="w-80 h-80 rounded-2xl overflow-hidden border-4 border-green-500/30 shadow-2xl shadow-green-500/20 animate-float">
+                <img
+                  src={seixasImg} 
+                  alt="Carlos Seixas"
+                  width={320}
+                  height={320}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-green-400 rounded-2xl -z-10"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full -z-10"></div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-white">Desenvolvedor apaixonado por tecnologia</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Com mais de 5 anos de experiência em desenvolvimento web, especializo-me em criar aplicações modernas e
+                escaláveis. Minha jornada começou com curiosidade sobre como as coisas funcionam na web, e hoje
+                transformo ideias complexas em soluções digitais elegantes.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Trabalho principalmente com React, Node.js e tecnologias modernas do ecossistema JavaScript. Acredito
+                que o código deve ser não apenas funcional, mas também limpo, testável e maintível.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 pt-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">2+</div>
+                <div className="text-sm text-gray-400">Anos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">50+</div>
+                <div className="text-sm text-gray-400">Copos de café</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">20+</div>
+                <div className="text-sm text-gray-400">Clientes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutSection
