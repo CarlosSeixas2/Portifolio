@@ -1,9 +1,10 @@
-import Heading from "../atoms/heading"
-import Text from "../atoms/text"
-import SectionDivider from "../atoms/section-divider"
-import ExperienceCard from "../molecules/experience-card"
+import Heading from "../atoms/heading";
+import Text from "../atoms/text";
+import SectionDivider from "../atoms/section-divider";
+import ExperienceCard from "../molecules/experience-card";
 
-import lemosImg from '../../assets/lemos.png';
+import lemosImg from "../../assets/lemos.png";
+import rgmImg from "../../assets/logo_rgm.jpeg";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -15,8 +16,17 @@ const ExperienceSection = () => {
       location: "Parnaíba, PI",
       description:
         "Desenvolvo soluções para automatizar processos, integrando IA (API Gemini) na análise de formulários conforme a LGPD, migrando bancos para PostgreSQL e otimizando análises operacionais com Python. Foco em APIs com IA e geração de relatórios contábeis automatizados.",
-      technologies: ["Python", "Flask", "Pandas", "Linux", "Nginx", "Gunicorn", "Docker", "Gemini"],
-      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQF_dwpU36qwKA/company-logo_200_200/company-logo_200_200/0/1632424407004/rgm_tecnologia_inteligncia_e_processos_logo?e=1756944000&v=beta&t=qwMHGa-AisAJSr3JGYvmLdI-OD1QF5wak0qDSmzaXOE",
+      technologies: [
+        "Python",
+        "Flask",
+        "Pandas",
+        "Linux",
+        "Nginx",
+        "Gunicorn",
+        "Docker",
+        "Gemini",
+      ],
+      logo: rgmImg,
     },
     {
       company: "Lemos Energia",
@@ -26,7 +36,7 @@ const ExperienceSection = () => {
       location: "Parnaíba, PI",
       description:
         "Desenvolvi app móvel (Android/iOS) para obras, com checklists, registros de não conformidades e ensaios elétricos, gerando PDFs e funcionando offline com sincronização. Inclui gestão de usuários e web app com dashboards interativos e filtros de análise.",
-      technologies: ["Vue.js", "Express", "MongoDB", "Stripe", "Git"],
+      technologies: ["React Native", "Expo", "Django", "Git"],
       logo: lemosImg,
     },
     {
@@ -37,22 +47,24 @@ const ExperienceSection = () => {
       location: "Parnaíba, PI",
       description:
         "Responsável pela geração de insights a partir de dados e geração de relatórios gráficos para acompanhamento de indicadores de performance",
-      technologies: ["React", "Redux", "Sass", "Jest", "Figma"],
-      // logo: "/placeholder.svg",
+      technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "Excel"],
+      logo: "/placeholder.svg",
     },
-
-  ]
+  ];
 
   return (
-    <section id="experience" className="pt-20 bg-gradient-to-b from-black to-gray-900">
+    <section
+      id="experience"
+      className="pt-20 bg-gradient-to-b from-black to-gray-900"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Heading level={2} highlight="Experiência">
             Minha Experiência
           </Heading>
           <Text variant="lead" className="max-w-2xl mx-auto">
-            Minha jornada profissional através de diferentes empresas e projetos, sempre focando em crescimento e
-            aprendizado contínuo.
+            Minha jornada profissional através de diferentes empresas e
+            projetos, sempre focando em crescimento e aprendizado contínuo.
           </Text>
           <SectionDivider />
         </div>
@@ -74,7 +86,7 @@ const ExperienceSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ExperienceSection
+export default ExperienceSection;

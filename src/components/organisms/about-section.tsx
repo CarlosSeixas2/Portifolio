@@ -1,9 +1,11 @@
-import seixasImg from '../../assets/seixas.png';
-
+import seixasImg from "../../assets/seixas.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-black to-gray-900"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -17,7 +19,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-2xl overflow-hidden border-4 border-green-500/30 shadow-2xl shadow-green-500/20 animate-float">
                 <img
-                  src={seixasImg} 
+                  src={seixasImg}
                   alt="Carlos Seixas"
                   width={320}
                   height={320}
@@ -31,15 +33,21 @@ const AboutSection = () => {
 
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-white">Desenvolvedor apaixonado por tecnologia</h3>
+              <h3 className="text-2xl font-semibold text-white">
+                Desenvolvedor apaixonado por tecnologia
+              </h3>
               <p className="text-gray-300 leading-relaxed">
-                Com mais de 5 anos de experiência em desenvolvimento web, especializo-me em criar aplicações modernas e
-                escaláveis. Minha jornada começou com curiosidade sobre como as coisas funcionam na web, e hoje
-                transformo ideias complexas em soluções digitais elegantes.
+                Com mais de 5 anos de experiência em desenvolvimento web,
+                especializo-me em criar aplicações modernas e escaláveis. Minha
+                jornada começou com curiosidade sobre como as coisas funcionam
+                na web, e hoje transformo ideias complexas em soluções digitais
+                elegantes.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Trabalho principalmente com React, Node.js e tecnologias modernas do ecossistema JavaScript. Acredito
-                que o código deve ser não apenas funcional, mas também limpo, testável e maintível.
+                Trabalho principalmente com React, Node.js e tecnologias
+                modernas do ecossistema JavaScript. Acredito que o código deve
+                ser não apenas funcional, mas também limpo, testável e
+                maintível.
               </p>
             </div>
 
@@ -54,14 +62,14 @@ const AboutSection = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400">20+</div>
-                <div className="text-sm text-gray-400">Clientes</div>
+                <div className="text-sm text-gray-400">Noites viradas</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;

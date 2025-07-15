@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "../ui/button"
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "../ui/button";
+import logo from "../../assets/Logo.svg";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "#about", label: "Sobre" },
@@ -20,18 +21,21 @@ const Navigation = () => {
     { href: "#projects", label: "Projetos" },
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contato" },
-  ]
+  ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md border-b border-green-500/20" : "bg-transparent"
-        }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-black/80 backdrop-blur-md border-b border-green-500/20"
+          : "bg-transparent"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <a href="/">
             <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-              Logo
+              <img className="h-9 w-auto" src={logo} alt="Logo" />
             </div>
           </a>
 
@@ -75,7 +79,7 @@ const Navigation = () => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
