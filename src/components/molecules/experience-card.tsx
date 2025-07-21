@@ -6,6 +6,7 @@ import DateRange from "../atoms/date-range";
 interface ExperienceCardProps {
   company: string;
   position: string;
+  tag?: string;
   startDate: string;
   endDate?: string;
   description: string;
@@ -17,6 +18,7 @@ interface ExperienceCardProps {
 const ExperienceCard = ({
   company,
   position,
+  tag,
   startDate,
   endDate,
   description,
@@ -73,13 +75,21 @@ const ExperienceCard = ({
               <DateRange startDate={startDate} endDate={endDate} />
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400">
-              <span className="font-medium text-white">{company}</span>
-              {location && (
-                <>
-                  <span className="hidden sm:inline">•</span>
-                  <span className="text-sm">{location}</span>
-                </>
+            <div className=" flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-gray-400">
+              <div className="flex items-center gap-2">
+                <span className="font-medium text-white">{company}</span>
+                {location && (
+                  <>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="text-sm">{location}</span>
+                  </>
+                )}
+              </div>
+
+              {tag && (
+                <Badge className="text-xs bg-emerald-600 text-white border-none">
+                  {tag}
+                </Badge>
               )}
             </div>
           </div>

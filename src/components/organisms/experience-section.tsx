@@ -32,16 +32,26 @@ const ExperienceSection = () => {
     {
       company: "Didakta",
       position: "Desenvolvedor React",
+      tag: "Freelancer",
       startDate: "Jun 2025",
-      endDate: undefined, // Presente
+      endDate: "Set 2025",
       location: "Parnaíba, PI",
       description:
-        "Responsável pelo desenvolvimento de aplicações web com React, com UX/Ui moderna e intuitiva. Integração de APIs, otimização de performance.",
-      technologies: ["React", "React Query", "TypeScript", "Git", "Tailwind"],
+        "Responsável pelo desenvolvimento de aplicações web com React, replicando UX/UI no figma, implementando componentes reutilizáveis com ATOMICS DESIGN, utilizando React Query para gerenciamento de estado e integração com APIs RESTful com Axios.",
+      technologies: [
+        "React",
+        "React Query",
+        "TypeScript",
+        "Git",
+        "Git Flow",
+        "Tailwind",
+        "Figma",
+      ],
     },
     {
       company: "Lemos Energia",
-      position: "Freelancer Mobile",
+      position: "Desenvolvedor Mobile",
+      tag: "Freelancer",
       startDate: "Nov 2024",
       endDate: "Mar 2025",
       location: "Parnaíba, PI",
@@ -53,6 +63,7 @@ const ExperienceSection = () => {
     {
       company: "Freelancer",
       position: "Analista de Dados",
+      tag: "Freelancer",
       startDate: "Jan 2024",
       endDate: "Maio 2024",
       location: "Parnaíba, PI",
