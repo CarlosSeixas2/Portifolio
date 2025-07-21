@@ -50,17 +50,16 @@ const HeroSection = () => {
               </Button>
             </a>
 
-            <Button
-              onClick={() => {
-                console.log("Download CV clicked");
-              }}
-              variant="outline"
-              size="lg"
-              className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black px-8 py-3 rounded-full transition-all duration-300 group bg-transparent"
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Download CV
-            </Button>
+            <a href="/carlos-seixas-cv.pdf" download>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black px-8 py-3 rounded-full transition-all duration-300 group"
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                Download CV
+              </Button>
+            </a>
           </div>
         </div>
       </div>
