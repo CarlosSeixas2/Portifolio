@@ -30,6 +30,16 @@ const ExperienceSection = () => {
       logo: rgmImg,
     },
     {
+      company: "Didakta",
+      position: "Desenvolvedor React",
+      startDate: "Jun 2025",
+      endDate: undefined, // Presente
+      location: "Parnaíba, PI",
+      description:
+        "Responsável pelo desenvolvimento de aplicações web com React, com UX/Ui moderna e intuitiva. Integração de APIs, otimização de performance.",
+      technologies: ["React", "React Query", "TypeScript", "Git", "Tailwind"],
+    },
+    {
       company: "Lemos Energia",
       position: "Freelancer Mobile",
       startDate: "Nov 2024",
@@ -49,7 +59,6 @@ const ExperienceSection = () => {
       description:
         "Responsável pela geração de insights a partir de dados e geração de relatórios gráficos para acompanhamento de indicadores de performance",
       technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "Excel"],
-      logo: "/placeholder.svg",
     },
   ];
 

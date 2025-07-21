@@ -41,7 +41,7 @@ const AboutSection = () => {
                   Desenvolvedor apaixonado por tecnologia
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Com mais de 5 anos de experiência em desenvolvimento web,
+                  Com mais de 2 anos de experiência em desenvolvimento web,
                   especializo-me em criar aplicações modernas e escaláveis.
                   Minha jornada começou com curiosidade sobre como as coisas
                   funcionam na web, e hoje transformo ideias complexas em

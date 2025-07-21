@@ -142,8 +142,6 @@ const ProjectsSection = () => {
               </Card>
             </AnimatedWrapper>
           ))}
-
-          <button>Mais Projetos</button>
         </div>
       </div>
     </section>
