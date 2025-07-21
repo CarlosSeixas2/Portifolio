@@ -1,4 +1,5 @@
 import seixasImg from "../../assets/seixas.png";
+import AnimatedWrapper from "../atoms/animated-wrapper";
 
 const AboutSection = () => {
   return (
@@ -8,10 +9,12 @@ const AboutSection = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Sobre <span className="text-green-400">Mim</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+          <AnimatedWrapper className="transition-opacity delay-300 duration-700">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Sobre <span className="text-green-400">Mim</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto"></div>
+          </AnimatedWrapper>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -33,36 +36,44 @@ const AboutSection = () => {
 
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-white">
-                Desenvolvedor apaixonado por tecnologia
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Com mais de 5 anos de experiência em desenvolvimento web,
-                especializo-me em criar aplicações modernas e escaláveis. Minha
-                jornada começou com curiosidade sobre como as coisas funcionam
-                na web, e hoje transformo ideias complexas em soluções digitais
-                elegantes.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Trabalho principalmente com React, Node.js e tecnologias
-                modernas do ecossistema JavaScript. Acredito que o código deve
-                ser não apenas funcional, mas também limpo, testável e
-                maintível.
-              </p>
+              <AnimatedWrapper className="transition-delay-700ms">
+                <h3 className="text-2xl font-semibold text-white">
+                  Desenvolvedor apaixonado por tecnologia
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Com mais de 5 anos de experiência em desenvolvimento web,
+                  especializo-me em criar aplicações modernas e escaláveis.
+                  Minha jornada começou com curiosidade sobre como as coisas
+                  funcionam na web, e hoje transformo ideias complexas em
+                  soluções digitais elegantes.
+                </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Trabalho principalmente com React, Node.js e tecnologias
+                  modernas do ecossistema JavaScript. Acredito que o código deve
+                  ser não apenas funcional, mas também limpo, testável e
+                  maintível.
+                </p>
+              </AnimatedWrapper>
             </div>
 
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400">2+</div>
-                <div className="text-sm text-gray-400">Anos</div>
+                <AnimatedWrapper className="transition-delay-700ms">
+                  <div className="text-3xl font-bold text-green-400">2+</div>
+                  <div className="text-sm text-gray-400">Anos</div>
+                </AnimatedWrapper>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400">50+</div>
-                <div className="text-sm text-gray-400">Copos de café</div>
+                <AnimatedWrapper className="transition-delay-700ms">
+                  <div className="text-3xl font-bold text-green-400">50+</div>
+                  <div className="text-sm text-gray-400">Copos de café</div>
+                </AnimatedWrapper>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400">20+</div>
-                <div className="text-sm text-gray-400">Noites viradas</div>
+                <AnimatedWrapper className="transition-delay-700ms">
+                  <div className="text-3xl font-bold text-green-400">20+</div>
+                  <div className="text-sm text-gray-400">Noites viradas</div>
+                </AnimatedWrapper>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ const Navigation = () => {
     { href: "#about", label: "Sobre" },
     { href: "#experience", label: "Experiência" },
     { href: "#projects", label: "Projetos" },
-    { href: "#skills", label: "Skills" },
+    { href: "#skills", label: "Habilidades" },
     { href: "#contact", label: "Contato" },
   ];
 
@@ -27,13 +27,13 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-green-500/20"
+          ? "bg-black/50 backdrop-blur-md border-b border-green-500/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="/">
+          <a href="#home">
             <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
               <img className="h-9 w-auto" src={logo} alt="Logo" />
             </div>

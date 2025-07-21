@@ -66,6 +66,18 @@
     scroll-behavior: smooth;
   }
 
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -130,7 +142,37 @@
   }
 }
 
-/* Adicional: você pode adicionar as cores fixas do tema também para a dark mode manualmente, caso queira */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes float-rev {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-fast {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-float-rev {
+  animation: float-rev 5s ease-in-out infinite;
+}
 
 body.dark {
   background-color: hsl(222.2, 84%, 4.9%);

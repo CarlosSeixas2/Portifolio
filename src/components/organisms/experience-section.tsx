@@ -5,6 +5,7 @@ import ExperienceCard from "../molecules/experience-card";
 
 import lemosImg from "../../assets/lemos.png";
 import rgmImg from "../../assets/logo_rgm.jpeg";
+import AnimatedWrapper from "../atoms/animated-wrapper";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -74,13 +75,17 @@ const ExperienceSection = () => {
 
           <div className="space-y-8">
             {experiences.map((experience, index) => (
-              <div key={index} className="relative">
-                <div className="absolute left-2 sm:left-6 w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
-
-                <div className="ml-12 sm:ml-20">
-                  <ExperienceCard {...experience} />
+              <AnimatedWrapper
+                key={index}
+                className={`transition-delay-[${index * 300}ms]`}
+              >
+                <div className="relative">
+                  <div className="absolute left-2 sm:left-6 w-4 h-4 bg-green-500 rounded-full border-4 border-black shadow-lg shadow-green-500/50"></div>
+                  <div className="ml-12 sm:ml-20">
+                    <ExperienceCard {...experience} />
+                  </div>
                 </div>
-              </div>
+              </AnimatedWrapper>
             ))}
           </div>
         </div>
