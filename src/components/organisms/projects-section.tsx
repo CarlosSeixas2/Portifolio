@@ -116,7 +116,7 @@ const ProjectsSection = () => {
                   </div>
 
                   <div className="flex gap-3 pt-2">
-                    {project.liveUrl != "#" && (
+                    {project.liveUrl && (
                       <a href={project.liveUrl} target="_blank">
                         <Button
                           size="sm"

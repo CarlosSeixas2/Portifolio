@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import AnimatedWrapper from "../atoms/animated-wrapper";
+import emailjs from "emailjs-com";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -15,9 +16,41 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+
+    try {
+      const result = await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_PUBLIC_KEY
+      );
+
+      setIsLoading(false);
+
+      console.log("Email enviado com sucesso:", result.text);
+
+      // Limpa o formulário
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Erro ao enviar email:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
@@ -195,8 +228,36 @@ const ContactSection = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-black font-semibold py-3 rounded-full shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 group"
                 >
-                  <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Enviar Mensagem
+                  {isLoading ? (
+                    <>
+                      <svg
+                        className="mr-3 w-5 h-5 animate-spin text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                        ></path>
+                      </svg>
+                      Enviando…
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                      Enviar Mensagem
+                    </>
+                  )}
                 </Button>
               </form>
             </AnimatedWrapper>
