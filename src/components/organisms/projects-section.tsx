@@ -25,7 +25,6 @@ const ProjectsSection = () => {
       description: "Aplicativo de listagem de filmes.",
       image: mobileMovieAppImg,
       technologies: ["React Native", "Expo", "TypeScript", "Tailwind"],
-      liveUrl: "#",
       githubUrl: "https://github.com/CarlosSeixas2/Mobile-Movie-App",
     },
     {
@@ -43,7 +42,6 @@ const ProjectsSection = () => {
         "ShardCN",
         "Tailwind",
       ],
-      liveUrl: "#",
       githubUrl: "https://github.com/CarlosSeixas2/EstudaPro",
     },
     {
@@ -54,7 +52,6 @@ const ProjectsSection = () => {
         "Aplicativo para ajudar profissionais da saúde a gerenciarem melhor seus pacientes e estarem mais proximos deles.",
       image: nutriAppImg,
       technologies: ["React Native", "Expo", "NestJS", "Prisma", "Docker"],
-      liveUrl: "#",
       githubUrl: "https://github.com/CarlosSeixas2/Mobile-NutriApp",
     },
   ];
