@@ -7,6 +7,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import AnimatedWrapper from "../atoms/animated-wrapper";
 import emailjs from "emailjs-com";
+import SectionDivider from "../atoms/section-divider";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -74,7 +75,7 @@ const ContactSection = () => {
               Vamos conversar sobre seu próximo projeto? Estou sempre aberto a
               novas oportunidades e desafios.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-4"></div>
+            <SectionDivider />
           </AnimatedWrapper>
         </div>
 

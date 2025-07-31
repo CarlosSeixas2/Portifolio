@@ -26,6 +26,7 @@ import {
   SiGunicorn,
 } from "react-icons/si";
 import AnimatedWrapper from "../atoms/animated-wrapper";
+import SectionDivider from "../atoms/section-divider";
 
 const skillIcons: Record<string, React.ReactElement> = {
   React: <SiReact />,
@@ -103,7 +104,7 @@ const SkillsSection = () => {
               Tecnologias e ferramentas que domino para criar soluções completas
               e eficientes.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-4"></div>
+            <SectionDivider />
           </AnimatedWrapper>
         </div>
 

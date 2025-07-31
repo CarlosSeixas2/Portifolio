@@ -7,6 +7,7 @@ import mobileMovieAppImg from "../../assets/movie_app.png";
 import estudaProImg from "../../assets/estuda_pro.png";
 import nutriAppImg from "../../assets/nutri_app.png";
 import AnimatedWrapper from "../atoms/animated-wrapper";
+import SectionDivider from "../atoms/section-divider";
 
 const ProjectsSection = () => {
   const projects = [
@@ -69,7 +70,7 @@ const ProjectsSection = () => {
               habilidades e paixão por criar soluções inovadoras.
             </p>
           </AnimatedWrapper>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto mt-4"></div>
+          <SectionDivider />
         </div>
 
         <div className=" grid md:grid-cols-2 gap-8">

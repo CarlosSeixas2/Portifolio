@@ -1,4 +1,5 @@
 import AboutSection from "./components/organisms/about-section";
+import AchievementsSection from "./components/organisms/achievements-section";
 import ContactSection from "./components/organisms/contact-section";
 import ExperienceSection from "./components/organisms/experience-section";
 import HeroSection from "./components/organisms/hero-section";
@@ -16,8 +17,9 @@ export default function Portfolio() {
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
+        <AchievementsSection />
         <ContactSection />
       </main>
     </div>
-  )
+  );
 }
