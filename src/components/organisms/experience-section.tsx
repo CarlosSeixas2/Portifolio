@@ -12,7 +12,7 @@ import AnimatedWrapper from "../atoms/animated-wrapper";
 const ExperienceSection = () => {
   const experiences = [
     {
-      company: "Eliseu Martins",
+      company: "Elizeu Martins",
       position: "Desenvolvedor Mobile",
       startDate: "Agos 2025",
       endDate: "",
