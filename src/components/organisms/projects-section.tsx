@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       title: "NutriApp",
       alert: "Em desenvolvimento",
       description:
-        "Aplicativo para ajudar profissionais da saúde a gerenciarem melhor seus pacientes e estarem mais proximos deles.",
+        "Aplicativo para acompanhamento de pacientes e gestão de dietas.",
       image: nutriAppImg,
       technologies: ["React Native", "Expo", "NestJS", "Prisma", "Docker"],
       githubUrl: "https://github.com/CarlosSeixas2/Mobile-NutriApp",
