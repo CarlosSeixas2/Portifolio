@@ -95,67 +95,69 @@ export default function AchievementsSection() {
       </AnimatedWrapper>
 
       <AnimatedWrapper className={`transition-delay-[300ms]`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pl-40 pr-40">
-          {filteredAchievements.map((achievement) => (
-            <Card
-              key={achievement.id}
-              className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm"
-            >
-              <CardHeader className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  {achievement.image ? (
-                    <img
-                      src={achievement.image || "/placeholder.svg"}
-                      alt={achievement.title}
-                      className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-64 flex items-center justify-center bg-gray-800">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-12 h-12 text-gray-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 0l7 9 5-6 7 9"
-                        />
-                        <circle cx="8" cy="8" r="1.5" fill="currentColor" />
-                      </svg>
-                    </div>
-                  )}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-2xl px-4">
+            {filteredAchievements.map((achievement) => (
+              <Card
+                key={achievement.id}
+                className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm"
+              >
+                <CardHeader className="p-0">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    {achievement.image ? (
+                      <img
+                        src={achievement.image || "/placeholder.svg"}
+                        alt={achievement.title}
+                        className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-64 flex items-center justify-center bg-gray-800">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-12 h-12 text-gray-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 0l7 9 5-6 7 9"
+                          />
+                          <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+                        </svg>
+                      </div>
+                    )}
 
-                  <div className="absolute top-4 right-4">
-                    <Badge
-                      variant="default"
-                      className="text-white-700 bg-green-500/80"
-                    >
-                      {achievement.category}
-                    </Badge>
+                    <div className="absolute top-4 right-4">
+                      <Badge
+                        variant="default"
+                        className="text-white-700 bg-green-500/80"
+                      >
+                        {achievement.category}
+                      </Badge>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Award className="w-4 h-4 text-yellow-500" />
-                  <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {achievement.date}
-                  </span>
-                </div>
-                <CardTitle className="text-xl mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {achievement.title}
-                </CardTitle>
-                <CardDescription className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
-                  {achievement.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+                </CardHeader>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Award className="w-4 h-4 text-yellow-500" />
+                    <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {achievement.date}
+                    </span>
+                  </div>
+                  <CardTitle className="text-xl mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {achievement.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-4">
+                    {achievement.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </AnimatedWrapper>
     </section>
