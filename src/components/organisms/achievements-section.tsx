@@ -55,7 +55,7 @@ export default function AchievementsSection() {
         );
 
   return (
-    <div className="min-h-screen pt-6">
+    <section id="achievements" className="min-h-screen pt-6">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -148,6 +148,6 @@ export default function AchievementsSection() {
           </Card>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
