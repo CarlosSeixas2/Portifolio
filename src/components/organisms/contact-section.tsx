@@ -64,7 +64,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-black">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-b from-black to-gray-900"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <AnimatedWrapper className="transition-delay-700ms">

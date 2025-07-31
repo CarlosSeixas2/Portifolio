@@ -56,7 +56,10 @@ export default function AchievementsSection() {
         );
 
   return (
-    <section id="achievements" className="min-h-screen pt-6">
+    <section
+      id="achievements"
+      className="pb-20 pt-6 bg-gradient-to-b from-black to-gray-900"
+    >
       <div className="text-center mb-12">
         <AnimatedWrapper className={`transition-delay-[300ms]`}>
           <div className="flex items-center justify-center">
