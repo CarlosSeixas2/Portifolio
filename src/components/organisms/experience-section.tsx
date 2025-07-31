@@ -5,15 +5,28 @@ import ExperienceCard from "../molecules/experience-card";
 
 import lemosImg from "../../assets/lemos.png";
 import rgmImg from "../../assets/logo_rgm.jpeg";
+import eliseuImg from "../../assets/Eliseu.jpeg";
+import didaktaImg from "../../assets/Didakta.jpeg";
 import AnimatedWrapper from "../atoms/animated-wrapper";
 
 const ExperienceSection = () => {
   const experiences = [
     {
+      company: "Eliseu Martins",
+      position: "Desenvolvedor Mobile",
+      startDate: "Agos 2025",
+      endDate: "",
+      location: "Parnaíba, PI",
+      description:
+        "Desenvolvo aplicativos móveis para Android e iOS, utilizando Flutter e Dart, com foco em performance e usabilidade. Implemento integração com APIs RESTful, gerenciamento de estado com Riverpod.",
+      technologies: ["Flutter", "Dart"],
+      logo: eliseuImg,
+    },
+    {
       company: "RGM Tecnologia",
       position: "Desenvolvedor Python",
       startDate: "Jun 2023",
-      endDate: undefined, // Presente
+      endDate: "Jul 2025",
       location: "Parnaíba, PI",
       description:
         "Desenvolvo soluções para automatizar processos, integrando IA (API Gemini) na análise de formulários conforme a LGPD, migrando bancos para PostgreSQL e otimizando análises operacionais com Python. Foco em APIs com IA e geração de relatórios contábeis automatizados.",
@@ -34,7 +47,7 @@ const ExperienceSection = () => {
       position: "Desenvolvedor React",
       tag: "Freelancer",
       startDate: "Jun 2025",
-      endDate: "Set 2025",
+      endDate: "Ago 2025",
       location: "Parnaíba, PI",
       description:
         "Responsável pelo desenvolvimento de aplicações web com React, replicando UX/UI no figma, implementando componentes reutilizáveis com ATOMICS DESIGN, utilizando React Query para gerenciamento de estado e integração com APIs RESTful com Axios.",
@@ -47,6 +60,7 @@ const ExperienceSection = () => {
         "Tailwind",
         "Figma",
       ],
+      logo: didaktaImg,
     },
     {
       company: "Lemos Energia",
