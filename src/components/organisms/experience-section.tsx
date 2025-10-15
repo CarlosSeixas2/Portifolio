@@ -5,23 +5,35 @@ import ExperienceCard from "../molecules/experience-card";
 
 import lemosImg from "../../assets/lemos.png";
 import rgmImg from "../../assets/logo_rgm.jpeg";
-import eliseuImg from "../../assets/Eliseu.jpeg";
+// import eliseuImg from "../../assets/Eliseu.jpeg";
+import blueyImg from "../../assets/Bluey.ico";
 import didaktaImg from "../../assets/Didakta.jpeg";
 import AnimatedWrapper from "../atoms/animated-wrapper";
 
 const ExperienceSection = () => {
   const experiences = [
     {
-      company: "Elizeu Martins",
-      position: "Desenvolvedor Mobile",
+      company: "Bluey Data",
+      position: "Desenvolvedor Júnior",
       startDate: "Agos 2025",
       endDate: "",
       location: "Parnaíba, PI",
       description:
-        "Desenvolvo aplicativos móveis para Android e iOS, utilizando Flutter e Dart, com foco em performance e usabilidade. Implemento integração com APIs RESTful, gerenciamento de estado com Riverpod.",
-      technologies: ["Flutter", "Dart"],
-      logo: eliseuImg,
+        "Desenvolvedor FrontEnd React, focado em criar interfaces intuitivas e responsivas. Trabalho com integração de APIs RESTful, otimização de performance e implementação de melhores práticas de acessibilidade.",
+      technologies: ["React", "TypeScript", "Tailwind"],
+      logo: blueyImg,
     },
+    // {
+    //   company: "Elizeu Martins",
+    //   position: "Desenvolvedor Mobile",
+    //   startDate: "Agos 2025",
+    //   endDate: "",
+    //   location: "Parnaíba, PI",
+    //   description:
+    //     "Desenvolvo aplicativos móveis para Android e iOS, utilizando Flutter e Dart, com foco em performance e usabilidade. Implemento integração com APIs RESTful, gerenciamento de estado com Riverpod.",
+    //   technologies: ["Flutter", "Dart"],
+    //   logo: eliseuImg,
+    // },
     {
       company: "RGM Tecnologia",
       position: "Desenvolvedor Python",
