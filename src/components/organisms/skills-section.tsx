@@ -9,52 +9,97 @@ import {
   SiNestjs,
   SiPython,
   SiFlask,
+  SiFastapi,
+  SiDjango,
+  SiExpress,
   SiPostgresql,
+  SiMysql,
   SiMongodb,
+  SiSqlite,
   SiDocker,
   SiGit,
+  SiGithub,
   SiLinux,
   SiVite,
   SiVitest,
   SiFigma,
   SiPrisma,
+  SiSequelize,
+  SiCypress,
   SiSass,
   SiPostman,
   SiVercel,
   SiJest,
   SiNginx,
   SiGunicorn,
+  SiExpo,
+  SiFirebase,
+  SiAxios,
+  SiStyledcomponents,
+  SiKnexdotjs,
 } from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 import AnimatedWrapper from "../atoms/animated-wrapper";
 import SectionDivider from "../atoms/section-divider";
 
 const skillIcons: Record<string, React.ReactElement> = {
+  // Frontend
   React: <SiReact />,
+  ReactNative: <SiReact />,
+  Next: <RiNextjsFill />,
   TypeScript: <SiTypescript />,
   JavaScript: <SiJavascript />,
   HTML5: <SiHtml5 />,
   CSS3: <SiCss3 />,
   Tailwind: <SiTailwindcss />,
+  StyledComponents: <SiStyledcomponents />,
+  Sass: <SiSass />,
+  Expo: <SiExpo />,
+  Vite: <SiVite />,
+  TanStackQuery: <SiReact />,
+  Zustand: <SiReact />,
+  Axios: <SiAxios />,
+
+  // Backend
   NodeJS: <SiNodedotjs />,
+  Express: <SiExpress />,
   NestJS: <SiNestjs />,
   Python: <SiPython />,
   Flask: <SiFlask />,
+  FastAPI: <SiFastapi />,
+  Django: <SiDjango />,
+  DjangoNinja: <SiDjango />,
   PostgreSQL: <SiPostgresql />,
+  MySQL: <SiMysql />,
   MongoDB: <SiMongodb />,
+  SQLite: <SiSqlite />,
   RESTAPI: <SiPostman />,
+
+  // ORM / Database
   Prisma: <SiPrisma />,
+  Sequelize: <SiSequelize />,
+  Knex: <SiKnexdotjs />,
+  SQL: <SiPostgresql />,
+
+  // DevOps
   Docker: <SiDocker />,
   Git: <SiGit />,
+  GitHub: <SiGithub />,
   Linux: <SiLinux />,
-  Vite: <SiVite />,
-  Vitest: <SiVitest />,
-  Figma: <SiFigma />,
-  Sass: <SiSass />,
-  Postman: <SiPostman />,
-  Vercel: <SiVercel />,
-  Jest: <SiJest />,
   Nginx: <SiNginx />,
   Gunicorn: <SiGunicorn />,
+  CICD: <SiGithub />,
+
+  // Testing
+  Vitest: <SiVitest />,
+  Jest: <SiJest />,
+  Cypress: <SiCypress />,
+
+  // Tools
+  Postman: <SiPostman />,
+  Figma: <SiFigma />,
+  Vercel: <SiVercel />,
+  Firebase: <SiFirebase />,
 };
 
 const SkillsSection = () => {
@@ -63,6 +108,8 @@ const SkillsSection = () => {
       title: "Frontend",
       skills: [
         "React",
+        "Next",
+        "ReactNative",
         "TypeScript",
         "JavaScript",
         "HTML5",
@@ -74,19 +121,45 @@ const SkillsSection = () => {
       title: "Backend",
       skills: [
         "NodeJS",
+        "Express",
         "NestJS",
         "Python",
         "Flask",
+        "FastAPI",
+        "Django",
+        "DjangoNinja",
         "PostgreSQL",
-        "MongoDB",
-        "REST API",
-        "Prisma",
+        "RESTAPI",
       ],
     },
     {
-      title: "DevOps & Tools",
-      skills: ["Docker", "Git", "Linux", "Vite", "Nginx", "Gunicorn"],
+      title: "DevOps, Testing & Tools",
+      skills: [
+        "Docker",
+        "Git",
+        "GitHub",
+        "Nginx",
+        "Gunicorn",
+        "Postman",
+        "Figma",
+        "Firebase",
+      ],
     },
+  ];
+
+  const othersSkills = [
+    "Vite",
+    "Expo",
+    "Sass",
+    "Styled Components",
+    "MySQL",
+    "MongoDB",
+    "SQLite",
+    "Vitest",
+    "Jest",
+    "Prisma",
+    "Sequelize",
+    "Knex",
   ];
 
   return (
@@ -144,19 +217,17 @@ const SkillsSection = () => {
             </h3>
           </AnimatedWrapper>
           <div className="flex flex-wrap justify-center gap-3">
-            {["Postman", "Figma", "Sass", "Vitest", "Jest", "Vercel"].map(
-              (tech) => (
-                <AnimatedWrapper className="transition-delay-700ms">
-                  <span
-                    key={tech}
-                    className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full border border-gray-700 hover:border-green-500/50 hover:text-green-400 hover:bg-green-500/5 transition-all duration-200 cursor-default flex items-center gap-2"
-                  >
-                    {skillIcons[tech.replace(/\s/g, "")] ?? null}
-                    {tech}
-                  </span>
-                </AnimatedWrapper>
-              )
-            )}
+            {othersSkills.map((tech) => (
+              <AnimatedWrapper className="transition-delay-700ms">
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full border border-gray-700 hover:border-green-500/50 hover:text-green-400 hover:bg-green-500/5 transition-all duration-200 cursor-default flex items-center gap-2"
+                >
+                  {skillIcons[tech.replace(/\s/g, "")] ?? null}
+                  {tech}
+                </span>
+              </AnimatedWrapper>
+            ))}
           </div>
         </div>
       </div>

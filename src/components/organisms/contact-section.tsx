@@ -1,5 +1,5 @@
 import type React from "react";
-
+import { toast } from "sonner";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from "lucide-react";
 import { Button } from "../ui/button";
@@ -23,6 +23,8 @@ const ContactSection = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    const toastId = toast.loading("Enviando sua mensagem...");
+
     try {
       const result = await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
@@ -33,14 +35,15 @@ const ContactSection = () => {
           subject: formData.subject,
           message: formData.message,
         },
-        import.meta.env.VITE_PUBLIC_KEY
+        import.meta.env.VITE_PUBLIC_KEY,
       );
 
       setIsLoading(false);
 
-      console.log("Email enviado com sucesso:", result.text);
+      toast.success("Email enviado!", {
+        id: toastId,
+      });
 
-      // Limpa o formulário
       setFormData({
         name: "",
         email: "",
@@ -48,14 +51,16 @@ const ContactSection = () => {
         message: "",
       });
     } catch (error) {
-      console.error("Erro ao enviar email:", error);
+      toast.error("Erro ao enviar a mensagem.", {
+        id: toastId,
+      });
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,

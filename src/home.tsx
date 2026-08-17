@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 import AboutSection from "./components/organisms/about-section";
 import AchievementsSection from "./components/organisms/achievements-section";
 import ContactSection from "./components/organisms/contact-section";
@@ -20,6 +22,8 @@ export default function Portfolio() {
         <AchievementsSection />
         <ContactSection />
       </main>
+
+      <Toaster theme="system" position="top-right" richColors />
     </div>
   );
 }

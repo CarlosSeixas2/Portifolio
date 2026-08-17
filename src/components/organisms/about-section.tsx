@@ -38,20 +38,23 @@ const AboutSection = () => {
             <div className="space-y-4">
               <AnimatedWrapper className="transition-delay-700ms">
                 <h3 className="text-2xl font-semibold text-white">
-                  Desenvolvedor apaixonado por tecnologia
+                  Desenvolvedor Full Stack
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Com mais de 2 anos de experiência em desenvolvimento web,
-                  especializo-me em criar aplicações modernas e escaláveis.
-                  Minha jornada começou com curiosidade sobre como as coisas
-                  funcionam na web, e hoje transformo ideias complexas em
-                  soluções digitais elegantes.
+                <p className="text-gray-300 leading-relaxed text-justify">
+                  Desenvolvedor Full Stack com mais de 3 anos de experiência na
+                  construção de aplicações web, APIs, automações e soluções
+                  baseadas em IA. Trabalho principalmente com{" "}
+                  <span className="font-extrabold">Python, React e Node,</span>{" "}
+                  atuando desde a arquitetura e desenvolvimento até a
+                  implantação e manutenção das aplicações.
                 </p>
-                <p className="text-gray-300 leading-relaxed">
-                  Trabalho principalmente com React, Node.js e tecnologias
-                  modernas do ecossistema JavaScript. Acredito que o código deve
-                  ser não apenas funcional, mas também limpo, testável e
-                  maintível.
+                <p className="text-gray-300 leading-relaxed text-justify mt-2">
+                  Tenho experiência na integração de sistemas, desenvolvimento
+                  de APIs RESTful, automação de processos e construção de
+                  soluções orientadas por IA. Ao longo da minha trajetória,
+                  desenvolvi aplicações que reduziram processos operacionais em
+                  até 50% e automatizei fluxos de recrutamento, atendimento e
+                  processamento de dados.
                 </p>
               </AnimatedWrapper>
             </div>
@@ -59,7 +62,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
                 <AnimatedWrapper className="transition-delay-700ms">
-                  <div className="text-3xl font-bold text-green-400">2+</div>
+                  <div className="text-3xl font-bold text-green-400">3+</div>
                   <div className="text-sm text-gray-400">Anos</div>
                 </AnimatedWrapper>
               </div>
