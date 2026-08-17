@@ -26,7 +26,7 @@ const ContactSection = () => {
     const toastId = toast.loading("Enviando sua mensagem...");
 
     try {
-      const result = await emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         {
