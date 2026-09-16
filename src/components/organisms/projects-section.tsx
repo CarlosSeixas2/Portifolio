@@ -1,64 +1,48 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
-
-import gerenciadorUsuariosImg from "../../assets/gerenciador_usuarios_projeto.png";
-import mobileMovieAppImg from "../../assets/movie_app.png";
-import estudaProImg from "../../assets/estuda_pro.png";
-import nutriAppImg from "../../assets/nutri_app.png";
 import AnimatedWrapper from "../atoms/animated-wrapper";
 import SectionDivider from "../atoms/section-divider";
+import { projects } from "../../data/projects";
+import { useEffect, useState } from "react";
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Gerenciador de Usuários",
-      description: "Painel para gerenciamento de usuarios.",
-      image: gerenciadorUsuariosImg,
-      technologies: ["React", "Typescript", "Tailwind", "Vercel"],
-      liveUrl: "https://dashboardusuarios.vercel.app/",
-      githubUrl: "https://github.com/CarlosSeixas2/Gestao-de-Pessoas",
-    },
-    {
-      id: 2,
-      title: "MovieApp",
-      description: "Aplicativo de listagem de filmes.",
-      image: mobileMovieAppImg,
-      technologies: ["React Native", "Expo", "TypeScript", "Tailwind"],
-      githubUrl: "https://github.com/CarlosSeixas2/Mobile-Movie-App",
-    },
-    {
-      id: 3,
-      title: "EstudaPro",
-      alert: "Em desenvolvimento",
-      description: "Plataforma para gerenciamento de estudos e produtividade.",
-      image: estudaProImg,
-      technologies: [
-        "React",
-        "NestJs",
-        "Prisma",
-        "Docker",
-        "Typescript",
-        "ShardCN",
-        "Tailwind",
-      ],
-      githubUrl: "https://github.com/CarlosSeixas2/EstudaPro",
-    },
-    {
-      id: 4,
-      title: "NutriApp",
-      alert: "Em desenvolvimento",
-      description:
-        "Aplicativo para acompanhamento de pacientes e gestão de dietas.",
-      image: nutriAppImg,
-      technologies: ["React Native", "Expo", "NestJS", "Prisma", "Docker"],
-      githubUrl: "https://github.com/CarlosSeixas2/Mobile-NutriApp",
-    },
-  ];
+  const [selectedImage, setselectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+  }, [selectedImage]);
 
   return (
     <section id="projects" className="py-20 bg-gray-900">
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in"
+          onClick={() => setselectedImage(null)}
+        >
+          <button
+            type="button"
+            className="absolute top-6 right-6 p-2 text-gray-400 hover:text-white transition-colors"
+            onClick={() => setselectedImage(null)}
+            aria-label="Fechar visualização"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <img
+            src={selectedImage}
+            alt="Imagem Expandida"
+            className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl border border-gray-800"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <AnimatedWrapper className="transition-delay-700ms">
@@ -81,7 +65,8 @@ const ProjectsSection = () => {
             >
               <Card
                 key={project.id}
-                className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm"
+                className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm cursor-pointer"
+                onClick={() => setselectedImage(project.image)}
               >
                 <div className="relative overflow-hidden">
                   <img
