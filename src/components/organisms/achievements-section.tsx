@@ -1,6 +1,6 @@
-import { Award, Calendar, Trophy } from "lucide-react";
+import { Calendar, Trophy } from "lucide-react";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -8,52 +8,26 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { Badge } from "../ui/badge";
-import ideathonImg from "../../assets/trofeu_ideathon_2024.jpeg";
 import SectionDivider from "../atoms/section-divider";
 import AnimatedWrapper from "../atoms/animated-wrapper";
-
-interface Achievement {
-  id: number;
-  title: string;
-  image: string | null;
-  date: number;
-  description: string;
-  category: string;
-  link?: string;
-}
-
-const categories = ["Todos", "Certificação", "Competição"];
-
-const achievements: Achievement[] = [
-  {
-    id: 1,
-    title: "1° Lugar no Ideathon 2024",
-    image: ideathonImg,
-    date: 2024,
-    description:
-      "Uma maratona de inovação focada em tecnologia e empreendedorismo. Durante 72 horas, desenvolvemos uma solução voltada ao turismo de baixa exploração, sendo o prêmio uma viagem para o Neon2025.",
-    category: "Competição",
-  },
-  {
-    id: 2,
-    title: "Em Breve",
-    image: null,
-    date: 2025,
-    description: "Estou organizando essa seção ainda!",
-    category: "Certificação",
-  },
-];
+import { achievements, categories } from "../../data/achievements";
 
 export default function AchievementsSection() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [filteredAchievements, setFilteredAchievements] =
+    useState(achievements);
 
-  const filteredAchievements =
-    selectedCategory === "Todos"
-      ? achievements
-      : achievements.filter(
-          (achievement) => achievement.category === selectedCategory
-        );
+  useEffect(() => {
+    if (selectedCategory === "Todos") {
+      return setFilteredAchievements(achievements);
+    }
+
+    const newFilteredAchievements = filteredAchievements.filter(
+      (achievement) => achievement.category === selectedCategory,
+    );
+
+    setFilteredAchievements(newFilteredAchievements);
+  }, [selectedCategory]);
 
   return (
     <section
@@ -96,11 +70,11 @@ export default function AchievementsSection() {
 
       <AnimatedWrapper className={`transition-delay-[300ms]`}>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-2xl px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-2xl px-8">
             {filteredAchievements.map((achievement) => (
               <Card
                 key={achievement.id}
-                className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm"
+                className={`w-full bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm ${filteredAchievements.length === 1 ? "lg:col-start-2" : ""}`}
               >
                 <CardHeader className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
@@ -129,31 +103,21 @@ export default function AchievementsSection() {
                         </svg>
                       </div>
                     )}
-
-                    <div className="absolute top-4 right-4">
-                      <Badge
-                        variant="default"
-                        className="text-white-700 bg-green-500/80"
-                      >
-                        {achievement.category}
-                      </Badge>
-                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Award className="w-4 h-4 text-yellow-500" />
-                    <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {achievement.date}
-                    </span>
-                  </div>
                   <CardTitle className="text-xl mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {achievement.title}
                   </CardTitle>
                   <CardDescription className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-4">
                     {achievement.description}
                   </CardDescription>
+                  <div className="flex items-center justify-end gap-2 mb-3">
+                    <span className="text-sm text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {achievement.date}
+                    </span>
+                  </div>
                 </CardContent>
               </Card>
             ))}

@@ -9,7 +9,7 @@ import Navigation from "./components/organisms/navigation";
 import ProjectsSection from "./components/organisms/projects-section";
 import SkillsSection from "./components/organisms/skills-section";
 
-export default function Portfolio() {
+export default function Index() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation />

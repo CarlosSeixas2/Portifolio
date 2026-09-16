@@ -61,7 +61,6 @@ const FloatingTechIcons = () => {
         <Icon
           key={index}
           size={28}
-          //   className={`text-green-400/10 absolute ${style} animate-pulseStrong`}
           className={`text-green-400/30 drop-shadow-lg absolute ${style} animate-pulseStrong`}
         />
       ))}

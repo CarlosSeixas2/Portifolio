@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-b from-black to-gray-900"
+      className="py-20 bg-gradient-to-b from-black to-gray-900 "
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

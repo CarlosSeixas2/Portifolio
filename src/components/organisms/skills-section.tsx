@@ -183,11 +183,11 @@ const SkillsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {skillCategories.map((category) => (
-            <AnimatedWrapper className="transition-delay-700ms">
-              <div
-                key={category.title}
-                className="bg-black/30 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300"
-              >
+            <AnimatedWrapper
+              className="transition-delay-700ms"
+              key={category.title}
+            >
+              <div className="bg-black/30 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-green-500/30 transition-all duration-300">
                 <h3 className="text-xl font-semibold text-white mb-6 text-center">
                   {category.title}
                 </h3>
@@ -218,11 +218,8 @@ const SkillsSection = () => {
           </AnimatedWrapper>
           <div className="flex flex-wrap justify-center gap-3">
             {othersSkills.map((tech) => (
-              <AnimatedWrapper className="transition-delay-700ms">
-                <span
-                  key={tech}
-                  className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full border border-gray-700 hover:border-green-500/50 hover:text-green-400 hover:bg-green-500/5 transition-all duration-200 cursor-default flex items-center gap-2"
-                >
+              <AnimatedWrapper className="transition-delay-700ms" key={tech}>
+                <span className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-full border border-gray-700 hover:border-green-500/50 hover:text-green-400 hover:bg-green-500/5 transition-all duration-200 cursor-default flex items-center gap-2">
                   {skillIcons[tech.replace(/\s/g, "")] ?? null}
                   {tech}
                 </span>

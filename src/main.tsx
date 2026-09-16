@@ -1,10 +1,10 @@
 import "./globals.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Home from "./home";
+import Index from ".";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Home />
-  </StrictMode>
+    <Index />
+  </StrictMode>,
 );

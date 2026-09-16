@@ -75,7 +75,10 @@ const ProjectsSection = () => {
 
         <div className=" grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <AnimatedWrapper className="transition-delay-700ms">
+            <AnimatedWrapper
+              className="transition-delay-700ms"
+              key={project.id}
+            >
               <Card
                 key={project.id}
                 className="bg-black/50 border-gray-800 hover:border-green-500/50 transition-all duration-300 group overflow-hidden backdrop-blur-sm"

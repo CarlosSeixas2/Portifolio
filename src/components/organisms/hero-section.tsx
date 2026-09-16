@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "../ui/button";
-import FloatingIconsLucide from "../floating-icons";
+import FloatingTechIcons from "../floating-icons";
 
 const HeroSection = () => {
   return (
@@ -14,7 +14,7 @@ const HeroSection = () => {
 
       {/* Animated Grid */}
       {/* <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div> */}
-      <FloatingIconsLucide />
+      <FloatingTechIcons />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
@@ -67,7 +67,7 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="w-6 h-10 border-2 border-green-500 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-green-500 rounded-full mt-2 animate-bounce"></div>
+          <div className="w-1 h-3 bg-green-500 rounded-full mt-2 animate-scroll-indicator"></div>
         </div>
       </div>
     </section>
